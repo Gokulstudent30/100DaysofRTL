@@ -1,0 +1,17 @@
+// Half Subtractor using Data flow modeling
+
+module half_sub(a,b,diff,br);
+input a,b;
+output diff,br;
+assign diff = a^b;
+assign br = (~a)&b;
+endmodule
+
+//Full Subtractor using Data flow modeling
+
+module Full_sub(a,b,c,diff,br);
+input a,b,c;
+output diff,br;
+assign diff = a^b^c;
+assign br = (~a&b)|(~(a^b)&c);
+endmodule
