@@ -1,0 +1,14 @@
+// 4X1 MUX using data flow modeling
+
+module x1_mux(a,b,c,d,select0,select1,y);
+input a,b,c,d,select0,select1;
+output y;
+wire i1,i2,i3,i4,i5,i6;
+assign i1=~select0;
+assign i2=~select1;
+assign i3=i1&i2&a;
+assign i4=i1&select1&b;
+assign i5=select0&i2&c;
+assign i6=select0&select1&d;
+assign y=i3|i4|i5|i6;
+endmodule
