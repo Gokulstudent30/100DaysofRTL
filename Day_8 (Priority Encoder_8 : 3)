@@ -1,0 +1,32 @@
+//Behavioral level coding
+
+module Periority_encoder(en,i,out);
+input en;
+input [7:0] i;
+output [2:0] out;
+reg [2:0] out;
+always @(en,i)
+begin
+if(en)
+begin
+if(i[7]==1)
+out=3'b111;
+else if(i[6]==1)
+out=3'b110;
+else if(i[5]==1)
+out=3'b101;
+else if(i[4]==1)
+out=3'b100;
+else if(i[3]==1)
+out=3'b011;
+else if(i[2]==1)
+out=3'b010;
+else if(i[1]==1)
+out=3'b001;
+else if(i[0]==1)
+out=3'b000;
+else
+out=3'bzzz;
+end
+end
+endmodule
