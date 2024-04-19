@@ -1,0 +1,19 @@
+module Mag_Comp_3_bit(A,B,AeqB,AltB,AgtB);
+input [2:0] A,B;
+output reg AeqB,AltB,AgtB;
+always @(A,B)
+begin
+if(A>B)
+begin
+ AgtB=1;AeqB=0;AltB=0;
+ end
+else if(A<B)
+begin
+ AltB=1;AgtB=0;AeqB=0;
+ end
+else
+begin
+ AeqB=1;AltB=0;AgtB=0;
+ end
+end
+endmodule
